@@ -25,12 +25,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const Curve = () => {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+const Curve = props => {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
       position: "absolute",
       top: 0,
-      left: 0
+      left: 0,
+      width: "100%",
+      overflow: "hidden",
+      height: props.height
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    preserveAspectRatio: "none",
+    style: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      height: props.height,
+      width: `${props.width}%`
     },
     viewBox: "0 0 1200 120"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
@@ -113,7 +125,10 @@ function Edit(props) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     className: `${className} alignfull`,
     ...blockProps
-  }, props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  }, props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_curve__WEBPACK_IMPORTED_MODULE_6__.Curve, {
+    height: props.attributes.topHeight,
+    width: props.attributes.topWidth
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Top Curve", _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {
