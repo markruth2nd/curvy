@@ -12,6 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,16 +30,20 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
+import metadata from "./block.json"
 export default function Edit() {
 	return (
 		<>
 			<p { ...useBlockProps() }>
-				{ __( 'Curvy – hello from the editor!', 'curvy' ) }
+				{ __( 'Curvy – hello from the editor!', metadata.textdomain ) }
 			</p>
 			<InspectorControls>
-				<div>
-					{ __( 'Inspector controls go here!', 'curvy' ) }
+			<PanelBody title={ __("Top Curve", metadata.textdomain)}>
+				<div style={{display: "flex"}}>
+					<ToggleControl />
+					<span>{ __("Enable Top Curve", metadata.textdomain)}</span>
 				</div>
+			</PanelBody>
 			</InspectorControls>
 		</>
 	);
