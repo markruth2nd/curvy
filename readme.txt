@@ -53,3 +53,32 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
 plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
 "installation." Arbitrary sections will be shown below the built-in sections outlined above.
+
+
+# 💻 Wordpress Block/Components 💻
+
+## 📚 Description 📚
+This is a description example...
+
+## 🚀 Installation 🚀
+-  npm i
+
+Initial set up complete:
+- npx @wordpress/create-block@4.20.0 curvy which creates curvy plugin folder with files and structure
+- in plugin parent curvy folder where package.json file is, run npm install
+- updated src/ & build/ folder structure to src/blocks/curvy & build/blocks/curvy
+- moved files from scr/ folder to src/blocks/curvy and files from build/ to build/blocks/curvy
+- updated curvy.php to blockylicious.php
+- in blockylicious.php, updated create_block_curvy_block_init() to create_block_blockylicious_block_init() in function line & add_action line
+- updated register_block_type wordpress function to correct build folder structure: register_block_type( __DIR__ . '/build/blocks/curvy'
+- in plugin parent curvy folder, run npm start
+
+
+## 🤖 Technologies 🤖
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
+ ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) 
+ ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) 
+ ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) 
+ ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
+
+		
