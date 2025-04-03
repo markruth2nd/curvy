@@ -8,7 +8,7 @@
   \*************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blockylicious/curvy","version":"0.1.0","title":"Curvy","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting","supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"50px","right":"0px","bottom":"50px","left":"0px"}}}},"enableTopCurve":{"type":"boolean","default":true}},"textdomain":"blockylicious","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blockylicious/curvy","version":"0.1.0","title":"Curvy","category":"widgets","icon":"smiley","description":"Curvy shape dividers to make dividing page content more interesting","supports":{"html":false,"color":{"background":true,"link":true,"text":true},"spacing":{"padding":true}},"attributes":{"style":{"type":"object","default":{"color":{"background":"#ec4899"},"spacing":{"padding":{"top":"50px","right":"0px","bottom":"50px","left":"0px"}}}},"enableTopCurve":{"type":"boolean","default":true},"topWidth":{"type":"number","default":100},"topHeight":{"type":"number","default":100},"enableBottomCurve":{"type":"boolean","default":true}},"textdomain":"blockylicious","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }),
 
@@ -126,7 +126,27 @@ function Edit(props) {
       });
     },
     checked: props.attributes.enableTopCurve
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable Top Curve", _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))))));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable Top Curve", _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain))), props.attributes.enableTopCurve && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.HorizontalRule, null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    min: 100,
+    max: 300,
+    value: props.attributes.topWidth || 100,
+    onChange: newValue => {
+      props.setAttributes({
+        topWidth: parseInt(newValue)
+      });
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Curve Width", _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    min: 0,
+    max: 200,
+    value: props.attributes.topHeight,
+    onChange: value => {
+      props.setAttributes({
+        topHeight: value
+      });
+    },
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Curve Height", _block_json__WEBPACK_IMPORTED_MODULE_5__.textdomain)
+  })))));
 }
 
 /***/ }),
