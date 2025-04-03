@@ -11,7 +11,7 @@ export const Curve = (props) => {
         width: "100%", 
         overflow: "hidden", 
         height: props.height,
-        transform: `scaleX(${props.flipX ? -1 : 1}) rotate(${props.flipY ? "180deg" : 0}) scaleY(${props.flipY? -1 : 1})`,
+        transform: `scaleX(${props.flipX ? -1 : 1}) rotate(${props.flipY ? "180deg" : 0}) scaleY(${props.isBottom? -1 : 1})`,
         }}>
         <svg 
         preserveAspectRatio="none"
