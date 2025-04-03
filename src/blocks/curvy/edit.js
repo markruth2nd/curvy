@@ -78,15 +78,23 @@ export default function Edit(props) {
 					}}
 					label={ __("Curve Height", metadata.textdomain)}
 				/>
-				
-				{/* <div style={{display: "flex"}}>
-					<ToggleControl
+				<HorizontalRule />
+				<div style={{display: "flex"}}>
+					<ToggleControl 
 					onChange={(isChecked) => {
-						props.setAttributes({enableBottomCurve: isChecked})
-					}}
-					checked={props.attributes.enableBottomCurve} />
-					<span>{ __("Enable Bottom Curve", metadata.textdomain)}</span>
-				</div> */}
+						props.setAttributes({topFlipX: isChecked})
+					}} 
+					checked={props.attributes.topFlipX} />
+					<span>{ __("Flip horizantally", metadata.textdomain)}</span>
+				</div>
+				<div style={{display: "flex"}}>
+					<ToggleControl 
+					onChange={(isChecked) => {
+						props.setAttributes({topFlipY: isChecked})
+					}} 
+					checked={props.attributes.topFlipY} />
+					<span>{ __("Flip vertically", metadata.textdomain)}</span>
+				</div>
 				</>}
 			</PanelBody>
 			</InspectorControls>
